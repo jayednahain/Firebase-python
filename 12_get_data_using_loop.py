@@ -15,8 +15,10 @@ config ={
   }
 
 
+
 firebase_config = pyrebase.initialize_app(config)
 database = firebase_config.database()
+
 
 #$data_slot = database.child('testing3').child('session_tjree').get()
 #print(data_slot.each())
@@ -25,15 +27,8 @@ database = firebase_config.database()
     print(data)
 '''
 
+data_slot = database.child('testing3').child('session_tjree').get()
 
-'''for data in data_slot.each():
+
+for data in data_slot.each():
     print(data.key()," : ",data.val())
-'''
-
-data_slot_2 = database.child('uploads').get()
-
-
-#print(data_slot_2.each())
-'''for value in data_slot_2.each():
-    print(value.key()," : ",value.val())
-'''

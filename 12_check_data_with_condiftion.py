@@ -15,25 +15,18 @@ config ={
   }
 
 
+
 firebase_config = pyrebase.initialize_app(config)
 database = firebase_config.database()
 
-#$data_slot = database.child('testing3').child('session_tjree').get()
-#print(data_slot.each())
+search_data = input("enter data for search: ")
+new_data = input("enter new name: ")
 
-'''for data in data_slot.each():
-    print(data)
-'''
+data_slot = database.child('testing3').child('testing3testing3').get()
 
+for data in data_slot.each():
+   if data.val == search_data:
+      database.child("testing3").child("testing3").update({data.val():new_data})
+   else:
+      print(data ," not found !")
 
-'''for data in data_slot.each():
-    print(data.key()," : ",data.val())
-'''
-
-data_slot_2 = database.child('uploads').get()
-
-
-#print(data_slot_2.each())
-'''for value in data_slot_2.each():
-    print(value.key()," : ",value.val())
-'''
